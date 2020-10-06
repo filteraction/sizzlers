@@ -80,10 +80,11 @@
                                     <div class="header-info-mid">
                                         <!-- logo -->
                                         <div class="logo">
-                                            <a href="<?php echo home_url(); ?>">
-                                                <!-- <img src="assets/img/logo/logo.png" alt=""> -->
+                                          <?php the_custom_logo();?>
+                                           <!--  <a href="<?php echo home_url(); ?>">
+                                                <img src="assets/img/logo/logo.png" alt="">
                                                 <h2>Sizzler</h2>
-                                            </a>
+                                            </a> -->
                                         </div>
                                     </div>
                                     <div class="header-info-right d-flex align-items-center">

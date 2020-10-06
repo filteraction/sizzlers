@@ -8,6 +8,7 @@ class Sizzler{
 	$this->user_table =  $wpdb->prefix . "users";
 	$this->version_degrade(); 
 	#hooks
+	add_action( 'after_setup_theme', array($this,'sizzler_theme_setup'));
 	add_theme_support('post-thumbnails'); #thumbnail support
 	set_post_thumbnail_size( 1200, 9999 );
 	// add_filter('show_admin_bar', '__return_false'); #remove admin bar
@@ -56,6 +57,15 @@ class Sizzler{
   	//add_filter( 'login_redirect', array($this, 'wpdocs_my_login_redirect', 10, 3 ));
 
 	}
+
+	public function sizzler_theme_setup(){
+    // Add <title> tag support
+    add_theme_support( 'title-tag' );  
+    // Add custom-logo support
+    add_theme_support( 'custom-logo' );
+	}
+
+
 	public function wpdocs_my_login_redirect( $url, $request, $user ) {
     if ( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
         if ( $user->has_cap( 'administrator' ) ) {

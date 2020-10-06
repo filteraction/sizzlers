@@ -4,14 +4,16 @@
       $facebook_url = get_field('facebook_url', 'option');
       $printerest_url =  get_field('printerest_url', 'option');
   }
-  ?>
+
+?>
 
 <!Doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php wp_title();?></title>
+    <title><?php wp_title('|',true,'right'); ?> <?php bloginfo('name'); ?>
+</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="">
@@ -57,10 +59,11 @@
                                 <div class="header-info-mid">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="<?php echo home_url(); ?>">
-                                            <!-- <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/logo.png" alt=""> -->
-                                            <h2>Sizzler</h2>
-                                        </a>
+                                        <!-- <a href="<?php echo home_url(); ?>"> -->
+                                          <?php the_custom_logo();?>
+                                             <!-- <img src="" alt="">  -->
+                                            <!-- <h2>Sizzler</h2> -->
+                                        <!-- </a> -->
                                     </div>
                                 </div>
                                 <div class="header-info-right d-flex align-items-center">
