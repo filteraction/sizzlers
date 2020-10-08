@@ -2,7 +2,12 @@
 /*Template Name: Digital Megazine*/
 get_header();
 ?>
+<style>
+.section-tittle::before {
+    width: 75%;
+}
 
+</style>
     <main>
         <!-- breadcrumb Start-->
         <div class="page-notification">
@@ -20,10 +25,32 @@ get_header();
             </div>
         </div>
         <!-- breadcrumb End -->
-        
+          <!-- Current Issue Start -->
+          <div class="top-post-area pt-40 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Current Issue</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-lg-between">
+                <?php echo do_shortcode('[dflip id="436" ][/dflip]'); ?>
+                </div>
+            </div>
+        </div>
+        <!-- Current issue end -->  
         <!--? Blog Area Start-->
         <section class="blog_area section-padding">
             <div class="container">
+            <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Digital Magazine</h2>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                             <!-- single-job-content -->
                             <?php /**
