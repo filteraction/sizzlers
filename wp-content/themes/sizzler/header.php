@@ -96,11 +96,12 @@
                             <div class="col-12">
                                 <!-- logo 2 -->
                                 <div class="logo2">
-                                    <a href="<?php echo home_url(); ?>">
-                                        <!-- <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/logo.png" alt=""> -->
-                                        <h2>Sizzler</h2>
-                                    </a>
-                                </div>
+                                        <!-- <a href="<?php echo home_url(); ?>"> -->
+                                          <?php the_custom_logo();?>
+                                             <!-- <img src="" alt="">  -->
+                                            <!-- <h2>Sizzler</h2> -->
+                                        <!-- </a> -->
+                                    </div>
                                 <!-- logo 3 -->
                                 <div class="logo3 d-block d-sm-none">
                                     <a href="<?php echo home_url(); ?>">
@@ -112,6 +113,7 @@
                                 <div class="main-menu text-center d-none d-lg-block">
                                     <nav>                                                
                                         <ul id="navigation">
+                                           <li><a href="<?php echo site_url('digital-magazine'); ?>">DIGITAL MAGAZINE</a></li>
                                             <?php
                                               $taxonomy = 'category';
                                               $parent_terms = get_terms( array( 'taxonomy' => $taxonomy,'parent'  => 0,'hide_empty'   => false, 'exclude'=>1) );

@@ -64,13 +64,11 @@ label {
     	<?php endif; ?>
 
       </div>
-
-
-      <div class="comment-box">
+    <div class="comment-box">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- <h5>Leave a Comment</h5> -->
         <div class="row">
-          <div class="col-sm-12">
-            <h5>Leave a Comment</h5>
-            <div class="row">
  <?php
  ########## Overwrite the default comment form if user not loged in############
  if(!is_user_logged_in()){
@@ -86,15 +84,15 @@ $req = get_option( 'require_name_email' );
 $aria_req = ( $req ? " aria-required='true'" : '' );
 //change div and classes according to your theme
 $fields =  array(
-    'author' => '<div class="col-sm-6 pt-0 pb-0">
+    'author' => '<div class="col-sm-12 pt-0 pb-0">
                   <div class="form-group">'.
-        '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . 'placeholder="Enter Name*" required="required"/></div>',
-    'email'  => '<div class="form-group">'.
-        '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' placeholder="Enter Email*" required="required"/></div>',
-    'url'    => '<div class="form-group">' .
-        '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="Enter Website*" /></div></div>',
-     'comment_field'        => '<div class="col-sm-6">
-                   <div class="form-group"> <textarea class="form-control" id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></div></div>'
+        '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . 'placeholder="Enter Name*" required="required"/></div></div>',
+    'email'  => '<div class="col-sm-12 pt-0 pb-0"><div class="form-group">'.
+        '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' placeholder="Enter Email*" required="required"/></div></div>',
+    // 'url'    => '<div class="form-group">' .
+    //     '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="Enter Website*" /></div></div>',
+     'comment_field'  => '<div class="col-sm-12">
+                   <div class="form-group"> <textarea class="form-control" id="comment" name="comment" cols="40" rows="5" maxlength="65525" aria-required="true" required="required"></textarea></div></div>'
 );
 $comments_args = array(
     'fields' =>  $fields,
@@ -102,7 +100,7 @@ $comments_args = array(
     'label_submit' => 'Send My Comment',
     'submit_button' => '<div class="col-sm-12">
                             <div class="form-group">
-            <input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />
+            <input name="%1$s" type="submit" id="%2$s" class="%3$s submit-btn3" value="%4$s" />
         </div></div>'
 );
 }

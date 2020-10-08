@@ -141,13 +141,253 @@ if( class_exists('acf') ) {
         </div>
         <!-- Current issue end -->     
 
+        <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Celebrity</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   3 ,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'celebrity'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+
+
+                <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Fashion</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   3 ,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'fashion'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+
+                        <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Beauty</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   3 ,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'beauty'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->              
+
+         <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Life</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   3 ,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'life'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+
+
+
+
          <!-- Top Posts Start -->
         <div class="top-post-area pt-40 pb-40">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-tittle mb-35">
-                            <h2>Top Posts</h2>
+                            <h2>Digital Magazine</h2>
                         </div>
                     </div>
                 </div>
@@ -185,6 +425,9 @@ if( class_exists('acf') ) {
                             <!-- single-job-content -->
 
                         </div>
+                        <div class="row text-center">
+                            <button class="submit-btn3 mzeroauto">View All</button>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="google-add mb-40">
@@ -192,59 +435,15 @@ if( class_exists('acf') ) {
                             <p class="text-center">advertisement</p>
                         </div>
                     </div>
+
+                   
                 </div>
+
             </div>
         </div>
         <!-- Top Posts End -->
 
-        <!-- Latest Posts Area -->
-        <div class="latest-posts pt-10 pb-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-tittle mb-35">
-                            <h2>Blog Posts</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <?php /**
-                     * Custom Slug Name post
-                     */
-                    global $post;
-                        $args = array( 
-                            'posts_per_page'  =>   3 ,
-                            'orderby'         => 'date',
-                            'order'           => 'DESC',
-                            'post_type'       => 'post',
-                            'post_status'     => 'publish'
-                        );
-                        $the_query = new WP_Query( $args );
-                        while ( $the_query->have_posts() ) :
-                            $the_query->the_post();
-                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-                    ?>
-            
-                                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-baner-nw2 mb-30">
-                            <div class="banner-img-cap2">
-                                <div class="banner-img">
-                                    <img src="<?php echo $url;?>" alt="">
-                                </div>
-                                <div class="banner-cap2">
-                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Latest Posts End-->
+
     </main>
     
     

@@ -51,3 +51,11 @@ img.custom-logo {
     width: 328px;
     height: 95px;
 }
+
+.submit-btn3.mzeroauto{
+    margin: 0px auto;
+}
+
+.comment-form-cookies-consent {
+    display: none;
+}

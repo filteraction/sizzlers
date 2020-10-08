@@ -33,7 +33,4 @@ if(isset($_POST['sizzler_create_user'])){
 	$user->sizzler_create_user($_POST);
 }
 
-
-
-
 ?>
