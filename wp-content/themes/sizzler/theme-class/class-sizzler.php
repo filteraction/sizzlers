@@ -11,6 +11,7 @@ class Sizzler{
 	add_action( 'after_setup_theme', array($this,'sizzler_theme_setup'));
 	add_theme_support('post-thumbnails'); #thumbnail support
 	set_post_thumbnail_size( 1200, 9999 );
+	add_action( 'login_enqueue_scripts', array($this, 'theme_login_logo' ));
 	// add_filter('show_admin_bar', '__return_false'); #remove admin bar
 	add_action( 'init', array( $this,'Sizzler_create_menu' ) ); 
 	add_action( 'init', array($this, 'codex_magazine_init') );
@@ -56,8 +57,31 @@ class Sizzler{
 
   	//add_filter( 'login_redirect', array($this, 'wpdocs_my_login_redirect', 10, 3 ));
 
-	}
+	} //end __construct()
 
+	public function theme_login_logo() 
+	{ ?>
+		<style type="text/css">
+			#login h1 a, .login h1 a {
+				background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo/site-login-logo.png);
+			height:65px;
+			width:320px;
+			background-size: 320px 65px;
+			background-repeat: no-repeat;
+				padding-bottom: 30px;
+			}
+		</style>
+	 <?php 
+		add_filter( 'login_headerurl', array($this, 'my_login_logo_url' ));
+		add_filter( 'login_headertitle', array($this, 'my_login_logo_url_title' ));
+
+	}
+	public function my_login_logo_url() {
+		return home_url();
+	}
+	public function my_login_logo_url_title() {
+		return 'Your Site Name and Info';
+	}
 	public function sizzler_theme_setup(){
     // Add <title> tag support
     add_theme_support( 'title-tag' );  

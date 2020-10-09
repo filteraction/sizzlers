@@ -95,7 +95,91 @@ if( class_exists('acf') ) {
             </div>
         </div>
          <!-- Video Area End -->
-         
+         <!-- 3 box section start -->
+         <section class="blog_area section-padding pt-20 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="single-job-items mb-30 col-md-4 col-sm-12">
+                        <div class="company-img magimg">
+                            <a href="https://issuu.com/caribbeanposh/docs/posh-body-issue-web4" target="_blank">
+                                <img class="image" src="http://localhost/wp/sizzlers/wp-content/uploads/2020/10/Posh-Body-Issue-WEB3-cover.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="overlay">
+                                <div class="text"><a href="#">Sizzle Talk</a></div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                                                
+                                    
+                    <div class="single-job-items mb-30 col-md-4 col-sm-12">
+                        <div class="company-img magimg">
+                            <a href="https://issuu.com/caribbeanposh/docs/posh_body_issue_2015-final-print" target="_blank">
+                                <img class="image" src="http://localhost/wp/sizzlers/wp-content/uploads/2020/10/Posh-Body-Issue-2015-Final.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="overlay">
+                                <div class="text"><a href="#">Sizzle Girl</a></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                                                
+                                    
+                    <div class="single-job-items mb-30 col-md-4 col-sm-12">
+                        <div class="company-img magimg">
+                            <a href="https://issuu.com/caribbeanposh/docs/posh_2016_summer_issue" target="_blank">
+                                <img class="image" src="http://localhost/wp/sizzlers/wp-content/uploads/2020/10/Posh-2016-Summer-Issue-Final.jpg" alt="" class="img-responsive">
+                            </a>
+                            <div class="overlay">
+                                <div class="text"><a href="#">Hair</a></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                                                      
+                </div>
+            </div>
+        </section>
+
+<style>
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: #008CBA; */
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .9s ease;
+}
+.magimg:hover .image {
+  opacity: 0.3;
+}
+.magimg:hover .overlay {
+  width: 100%;
+  opacity: 1;
+}
+.overlay{
+background: linear-gradient(#655b5b0d, #11111336), url(https://fashionsizzle.com/wp-content/uploads/2017/12/blake-lively-style-brandon-maxwell-yellow-top-trousers-664x1024-1.jpg) !important;
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-weight: 700;
+}
+</style>
+        <!-- 3 box section end -->
 
         <!-- Latest Posts Area -->
         <div class="latest-posts pt-10 pb-0">
@@ -113,7 +197,7 @@ if( class_exists('acf') ) {
                      */
                     global $post;
                         $args = array( 
-                            'posts_per_page'  =>   3 ,
+                            'posts_per_page'  =>   6,
                             'orderby'         => 'date',
                             'order'           => 'DESC',
                             'post_type'       => 'post',
@@ -173,7 +257,7 @@ if( class_exists('acf') ) {
                      */
                     global $post;
                         $args = array( 
-                            'posts_per_page'  =>   3 ,
+                            'posts_per_page'  =>   6,
                             'orderby'         => 'date',
                             'order'           => 'DESC',
                             'post_type'       => 'post',
@@ -232,7 +316,7 @@ if( class_exists('acf') ) {
                      */
                     global $post;
                         $args = array( 
-                            'posts_per_page'  =>   3 ,
+                            'posts_per_page'  =>   6,
                             'orderby'         => 'date',
                             'order'           => 'DESC',
                             'post_type'       => 'post',
@@ -281,7 +365,7 @@ if( class_exists('acf') ) {
                 <div class="row">
                     <div class="col-12">
                         <div class="section-tittle mb-35">
-                            <h2>Life</h2>
+                            <h2>Health & Fitness</h2>
                         </div>
                     </div>
                 </div>
@@ -291,7 +375,240 @@ if( class_exists('acf') ) {
                      */
                     global $post;
                         $args = array( 
-                            'posts_per_page'  =>   3 ,
+                            'posts_per_page'  =>   6,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'life'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+
+         <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>LifeStyle</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   6,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'life'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+         <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Art</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   6,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'life'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+         <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Accessories</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   6,
+                            'orderby'         => 'date',
+                            'order'           => 'DESC',
+                            'post_type'       => 'post',
+                            'post_status'     => 'publish',
+                            'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'slug',
+                                        'terms' => 'life'
+                                    )
+                            )
+                        );
+                        $the_query = new WP_Query( $args );
+                        while ( $the_query->have_posts() ) :
+                            $the_query->the_post();
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                    ?>
+            
+                                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="<?php echo $url;?>" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"> <?php echo substr(get_the_excerpt(), 0, 109); ?>[..] </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?> 
+                    
+                </div>
+                <div class="row text-center">
+                    <button class="submit-btn3 mzeroauto">Load More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Latest Posts End-->
+         <!-- Latest Posts Area -->
+        <div class="latest-posts pt-10 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-tittle mb-35">
+                            <h2>Travel</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php /**
+                     * Custom Slug Name post
+                     */
+                    global $post;
+                        $args = array( 
+                            'posts_per_page'  =>   6,
                             'orderby'         => 'date',
                             'order'           => 'DESC',
                             'post_type'       => 'post',
@@ -342,7 +659,7 @@ if( class_exists('acf') ) {
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-tittle mb-35">
+                        <div class="section-tittle gdb-mag mb-35">
                             <h2>Digital Magazine</h2>
                         </div>
                     </div>

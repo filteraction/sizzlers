@@ -68,8 +68,9 @@
                                 </div>
                                 <div class="header-info-right d-flex align-items-center">
                                    <ul>                                          
+                                       <li><a href="<?php echo home_url();?>">Home</a></li>
                                        <li><a href="<?php echo site_url('about');?>">About</a></li>
-                                       <li><a href="<?php echo site_url('blog');?>">Blog</a></li>
+                                       <li><a href="<?php echo site_url('shop');?>">Shop</a></li>
                                        <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
                                        <?php if(is_user_logged_in()) {?>
                                         <li>
@@ -81,7 +82,7 @@
                                         </a>
                                         </a></li>
                                        <?php } else{?>
-                                       <li><a href="<?php echo site_url('login');?>">Log In / Sign Up</a></li>
+                                       <li><a href="<?php echo site_url('login');?>">Membership</a></li>
                                    <?php } ?>
                                    </ul>
                                    <!-- Social -->
@@ -151,6 +152,8 @@
                                                 } 
                                             } //end for each
                                             ?>
+                                            <li><a href="<?php echo site_url('subscribe'); ?>">Subscribe</a></li>
+                                            <li><a href="<?php echo site_url('video'); ?>">Video</a></li>
                                         </ul>
                                     </nav>
                                 </div>
