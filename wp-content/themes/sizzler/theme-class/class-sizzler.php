@@ -73,15 +73,12 @@ class Sizzler{
 		</style>
 	 <?php 
 		add_filter( 'login_headerurl', array($this, 'my_login_logo_url' ));
-		add_filter( 'login_headertitle', array($this, 'my_login_logo_url_title' ));
 
 	}
 	public function my_login_logo_url() {
 		return home_url();
 	}
-	public function my_login_logo_url_title() {
-		return 'Your Site Name and Info';
-	}
+
 	public function sizzler_theme_setup(){
     // Add <title> tag support
     add_theme_support( 'title-tag' );  

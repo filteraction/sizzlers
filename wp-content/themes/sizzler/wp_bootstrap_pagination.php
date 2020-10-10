@@ -4,12 +4,12 @@ $text_domain = null;
 $defaults = array(
     'range'           => 4,
     'custom_query'    => FALSE,
-    'previous_string' => __( '<i class="glyphicon glyphicon-chevron-left"></i>', $text_domain ),
-    'next_string'     => __( '<i class="glyphicon glyphicon-chevron-right"></i>', $text_domain ),
-    'first_string'    => __( 'First', $text_domain),
-    'last_string'     => __( 'Last', $text_domain),
-    'before_output'   => '<nav><ul class="pagination pull-right xs-pull-center mb-xs-40">',//customize according to your class
-    'after_output'    => '</ul></nav>'//customize according to your class
+    'previous_string' => __( '&laquo;', $text_domain ),
+    'next_string'     => __( '&raquo;', $text_domain ),
+    // 'first_string'    => __( 'First', $text_domain),
+    // 'last_string'     => __( 'Last', $text_domain),
+    'before_output'   => '<div class="pagination">',//customize according to your class
+    'after_output'    => '</div>'//customize according to your class
 );
 
 $args = wp_parse_args(
@@ -50,19 +50,20 @@ $echo = '';
 $previous = intval($page) - 1;
 $previous = esc_attr( get_pagenum_link($previous) );
 
-$firstpage = esc_attr( get_pagenum_link(1) );
-if ( $firstpage && (1 != $page || true) )
-    $echo .= '<li class="previous'.($page == 1 ? ' disabled' : '').'"><a href="' . $firstpage . '" aria-label="'.__( 'First', $text_domain ).'">' . $args['first_string'] . '</a></li>';
+//$firstpage = esc_attr( get_pagenum_link(1) );
+// if ( $firstpage && (1 != $page || true) )
+//     $echo .= '<a class="previous'.($page == 1 ? ' disabled' : '').'" href="' . $firstpage . '" aria-label="'.__( 'First', $text_domain ).'">' . $args['first_string'] . '</a>';
+
 if ( $previous && (1 != $page || true) )
-    $echo .= '<li'.($page == 1 ? ' class="disabled"' : '').'><a href="' . $previous . '" title="' . __( 'previous', $text_domain) . '" aria-label="' . __( 'previous', $text_domain) . '">' . $args['previous_string'] . '</a></li>';
+    $echo .= '<a class="previous'.($page == 1 ? ' disabled' : '').'" href="' . $previous . '" title="' . __( 'previous', $text_domain) . '" aria-label="' . __( 'previous', $text_domain) . '">' . $args['previous_string'] . '</a></li>';
 
 if ( !empty($min) && !empty($max) ) {
     for( $i = $min; $i <= $max; $i++ ) {
         if ($page == $i) {
             //$echo .= '<li class="active"><span class="active">' . str_pad( (int)$i, 2, '0', STR_PAD_LEFT ) . '</span></li>';
-            $echo .= sprintf( '<li class="active"><a class="active" href="%s">%d</a></li>', esc_attr( get_pagenum_link($i) ), $i );
+            $echo .= sprintf( '<a class="active" href="%s">%d</a>', esc_attr( get_pagenum_link($i) ), $i );
         } else {
-            $echo .= sprintf( '<li><a href="%s">%d</a></li>', esc_attr( get_pagenum_link($i) ), $i );
+            $echo .= sprintf( '<a href="%s">%d</a>', esc_attr( get_pagenum_link($i) ), $i );
         }
     }
 }
@@ -70,12 +71,12 @@ if ( !empty($min) && !empty($max) ) {
 $next = intval($page) + 1;
 $next = esc_attr( get_pagenum_link($next) );
 if ($next && ($count != $page || true) )
-    $echo .= '<li'.($page == $count ? ' class="disabled"' : '').'><a href="' . $next . '" title="' . __( 'next', $text_domain) . '" aria-label="' . __( 'next', $text_domain) . '">' . $args['next_string'] . '</a></li>';
+    $echo .= '<a '.($page == $count ? ' class="disabled"' : '').' href="' . $next . '" title="' . __( 'next', $text_domain) . '" aria-label="' . __( 'next', $text_domain) . '">' . $args['next_string'] . '</a>';
 
-$lastpage = esc_attr( get_pagenum_link($count) );
-if ( $lastpage ) {
-    $echo .= '<li class="next'.($page == $count ? ' disabled' : '').'"><a href="' . $lastpage . '" aria-label="' . __( 'Last', $text_domain) . '">' . $args['last_string'] . '</a></li>';
-}
+//$lastpage = esc_attr( get_pagenum_link($count) );
+// if ( $lastpage ) {
+//     $echo .= '<li class="next'.($page == $count ? ' disabled' : '').'"><a href="' . $lastpage . '" aria-label="' . __( 'Last', $text_domain) . '">' . $args['last_string'] . '</a></li>';
+// }
 if ( isset($echo) )
     echo $args['before_output'] . $echo . $args['after_output'];
 }

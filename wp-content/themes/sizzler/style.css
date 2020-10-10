@@ -89,3 +89,26 @@ h6.text-uppercase.font-weight-bold {
 .gdb-foo img.custom-logo {
     margin-left: -30px;
 }
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination a.active {
+    background-color: #f0168a;
+    color: white;
+    border: 1px solid #f0168a;
+  }
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.single-baner-nw2 .banner-img-cap2 .banner-img img {
+    height: 235px !important;
+}

@@ -12,15 +12,24 @@ if( class_exists('acf') ) {
   $b_image4 = get_field('banner_image_4', 'option');
 }
 ?>
+<main>
+ <div class="container-fluid">
+	<div class="row">
+        <?php
+        echo do_shortcode('[smartslider3 slider="4"]');
+        ?>
+	</div>
+</div>
 
-    <main>
+
+  
         <!-- Banner News Area Start -->
-        <div class="banner-news">
+        <!-- <div class="banner-news">
             <div class="container-fluid p-0">
                 <div class="banner-slider-active no-gutters ">
                     <?php /**
                      * Custom Slug Name post
-                     */
+                     
                             global $post;
                                 $args = array( 
                                     'posts_per_page'  =>   -1 ,
@@ -34,6 +43,7 @@ if( class_exists('acf') ) {
                                     $the_query->the_post();
                                         $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                                         $video_url  = get_field('video_url');
+                                        */
                                     ?>
                     
                                     
@@ -41,26 +51,26 @@ if( class_exists('acf') ) {
                         <div class="single-baner-nw mb-30 text-center">
                             <div class="banner-img-cap">
                                 <div class="banner-img">
-                                    <img src="<?php echo $url;?>" alt="">
-                                    <?php if(!empty($video_url)) {?>
-                                    <!--video iocn -->
+                                    <img src="<?php //echo $url;?>" alt="">
+                                    <?php //if(!empty($video_url)) {?>
+                                
                                     <div class="video-icon">
-                                        <a class="popup-video btn-icon" href="<?php echo $video_url; ?>" data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a>
+                                        <a class="popup-video btn-icon" href="<?php// echo $video_url; ?>" data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a>
                                     </div>
-                                <?php } ?>
+                                <?php //} ?>
                                 </div>
                                 <div class="banner-cap">
                                     <p>Trending</p>
-                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <h3><a href="<?php// the_permalink(); ?>"><?php// the_title(); ?></a></h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php endwhile; wp_reset_postdata();wp_reset_query();?>
+                    <?php //endwhile; wp_reset_postdata();wp_reset_query();?>
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Banner News Area End -->
 
         <!-- Video Area Start -->
@@ -69,10 +79,10 @@ if( class_exists('acf') ) {
         <div class="video-area">
             <div class="container pt-20 pb-20">
                 <div class="row video-wrapper">
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <iframe autoplay width="100%" height="480" src="https://www.youtube.com/embed/D7WNjCBLaU4?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                     <div class="single-baner-nw2">
                             <div class="banner-img-cap2 mb-10">
                                 <div class="banner-img">
