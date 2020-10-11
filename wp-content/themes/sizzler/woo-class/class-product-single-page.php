@@ -1,10 +1,11 @@
 <?php 
 /*Customize product details page*/
-class Product_Single_Page extends Custom_Commerce
+// class Product_Single_Page extends Custom_Commerce
+class Product_Single_Page 
 {
   public function __construct()
   {
-  parent::__construct();
+  // parent::__construct();
   //remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10); #remove sale flash
   add_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
   remove_action('woocommerce_before_single_product_summary','woocommerce_show_product_images',20);

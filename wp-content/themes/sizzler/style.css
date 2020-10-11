@@ -112,3 +112,95 @@ h6.text-uppercase.font-weight-bold {
 .single-baner-nw2 .banner-img-cap2 .banner-img img {
     height: 235px !important;
 }
+
+/*woocommerce customization*/
+span.posted_in{
+    color: #9aa7af;
+    display: block;
+    font-size: 13px;
+}
+.woocommerce .star-rating {
+    float: inherit !important;;
+}
+.woocommerce .star-rating::before {
+    color: #ffc107!important;
+}
+
+.woocommerce .star-rating span::before {
+    color:#dc3545!important;
+}
+.rating .star-rating {
+    display: -moz-inline-block;
+    display: -moz-inline-box;
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.woocommerce-notices-wrapper {
+    width: 100%;
+
+}
+.wc-forward{
+    margin-bottom: 10px;
+    background-image: linear-gradient(to left, #a51d65, #f0168a, #c72c7f);
+    padding: 6px 12px;
+    margin-left: 12px;
+}
+.woocommerce-message {
+    border-top-color: #f0168a;
+}
+.woocommerce-message::before {
+    color: #f0168a;
+}
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.btn.btn-danger.cartAdd.added {
+    margin-top: 8px;
+}
+
+ins{
+    text-decoration: none;
+}
+del {
+    color: inherit;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    margin-bottom: 10px;
+    background-image: linear-gradient(to left, #a51d65, #f0168a, #c72c7f);
+    border: none;
+    padding: 10px 65px 10px 31px;
+    text-transform: capitalize;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    background-size: 200%;
+    transition: 0.6s;
+    box-shadow: 0px 7px 21px 0px rgba(0, 0, 0, 0.12);
+    /* background-image: linear-gradient(to left, #FF3514, #d62d12, #FF3514); */
+    background-position: right;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+    /* background-color: ; */
+    text-decoration: none;
+    background-image: linear-gradient(to left, #a51d65, #f0168a, #c72c7f);
+    color: #fff;
+}
+
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.btn.btn-danger.cartAdd.added {
+    margin-top: 8px;
+    padding: 11px;
+}
+.product-info.smart-form .btn {
+    padding: 10px;
+    margin-left: 12px;
+    /* margin-top: -10px; */
+}

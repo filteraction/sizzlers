@@ -208,27 +208,6 @@
 </footer>
 <!-- Footer End-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <!-- Scroll Up -->
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
@@ -236,7 +215,6 @@
 
     <!-- JS here -->
     
-
     <?php wp_footer();?>
     </body>
 </html>

@@ -1,9 +1,10 @@
 <?php 
 /* Customize product page */
-class Product_Page extends Custom_Commerce{
+// class Product_Page extends Custom_Commerce{
+class Product_Page {
 	public function __construct()
 	{
-	parent::__construct();
+	// parent::__construct();
 	add_action( 'woocommerce_archive_description', array($this,'woocommerce_catalog_page_ordering'), 20 ); //sort by perpage view 
 	add_action( 'woocommerce_after_shop_loop', array($this,'woocommerce_catalog_page_ordering'), 20 );
 	add_filter('loop_shop_per_page',array($this, 'woo_sort_by_page'));// now we set our cookie if we need to

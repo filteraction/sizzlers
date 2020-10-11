@@ -1,9 +1,10 @@
 <?php 
 /* Customize checkout page*/
-class Masonic_Checkout extends Custom_Commerce {
+// class Masonic_Checkout extends Custom_Commerce {
+class Masonic_Checkout {
 	public function __construnct()
 	{
-	parent::__construct();
+	// parent::__construct();
 	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 	//add_filter( 'woocommerce_product_tabs', array($this,'sb_woo_remove_reviews_tab'), 98);
 	add_filter('bootstrap_woocommerce_form_field', array($this, 'wc_form_field_args',10,3));

@@ -2,6 +2,9 @@
 /*Auther: GDB
 * version: v-25.9
 */
+
+use Nextend\SmartSlider3\Form\Element\WidgetArea;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
@@ -16,6 +19,7 @@ include('walker.php');
 include 'autoload.php';
 
 $theme_obj = new Sizzler(); // Theme base class
+
 
 //User login
 if(isset($_POST['sizzler_user_login'])){
@@ -32,3 +36,13 @@ if(isset($_POST['sizzler_create_user'])){
 	$user = new User(); 
 	$user->sizzler_create_user($_POST);
 }
+
+//woocommerce customization by gdb
+$custom_commerce = new Custom_Commerce(); // Base class for custom woo
+//woo customized by gdb
+//$shop_page = new Product_Page(); // Child class to customize product page
+//$shop_details = new Product_Single_Page(); // Child class to customize product single page
+// $mr_cart = new Masonic_Cart(); // Child class to customize minicart page
+//$mr_checkout = new Masonic_Checkout(); // Child class to customize checkout page
+//$mr_myaccount = new My_Account(); // Base class to customize woo myaccount page
+

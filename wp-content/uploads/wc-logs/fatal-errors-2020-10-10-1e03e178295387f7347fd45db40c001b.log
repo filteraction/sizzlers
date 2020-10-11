@@ -1,0 +1,14 @@
+2020-10-10T15:49:20+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_user_role() in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\woocommerce\content-product.php:37
+Stack trace:
+#0 D:\www\htdocs\wp\sizzlers\wp-includes\template.php(732): require()
+#1 D:\www\htdocs\wp\sizzlers\wp-content\plugins\woocommerce\includes\wc-core-functions.php(283): load_template('D:\\www\\htdocs\\w...', false)
+#2 D:\www\htdocs\wp\sizzlers\wp-content\plugins\woocommerce\includes\wc-template-functions.php(986): wc_get_template_part('content', 'product')
+#3 D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\woocommerce.php(19): woocommerce_content()
+#4 D:\www\htdocs\wp\sizzlers\wp-includes\template-loader.php(106): include('D:\\www\\htdocs\\w...')
+#5 D:\www\htdocs\wp\sizzlers\wp-blog-header.php(19): require_once('D:\\www\\htdocs\\w...')
+#6 D:\www\htdocs\wp\sizzlers\index.php(17): require('D:\\www\\htdocs\\w...')
+#7 {main}
+  thrown in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\woocommerce\content-product.php on line 37
+
+2020-10-10T15:57:08+00:00 CRITICAL syntax error, unexpected '$mr_cart' (T_VARIABLE) in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\functions.php on line 46
+

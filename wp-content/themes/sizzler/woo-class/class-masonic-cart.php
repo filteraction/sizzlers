@@ -1,11 +1,12 @@
 <?php 
 /*Minicart class */
 
-class Masonic_Cart extends Custom_Commerce
+// class Masonic_Cart extends Custom_Commerce
+class Masonic_Cart 
 {
 public function __construnct()
 {
-parent::__construct();
+//parent::__construct();
 add_action( 'masonic_wc_cart_totals_order_total_html_gdb_hook', array($this,'masonic_wc_cart_totals_order_total_html'), 20 );
 add_action( 'wp_footer', array($this, 'masonic_shipping_toggle' )); 
 add_shortcode( '[custom-techno-mini-cart]', array($this, 'masonic_custom_mini_cart' ));

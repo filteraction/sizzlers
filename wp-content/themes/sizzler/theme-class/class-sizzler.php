@@ -55,7 +55,7 @@ class Sizzler{
       add_action('admin_menu', array($this, 'remove_menus'));
   	}
 
-  	//add_filter( 'login_redirect', array($this, 'wpdocs_my_login_redirect', 10, 3 ));
+	  //add_filter( 'login_redirect', array($this, 'wpdocs_my_login_redirect', 10, 3 ));
 
 	} //end __construct()
 
@@ -64,10 +64,10 @@ class Sizzler{
 		<style type="text/css">
 			#login h1 a, .login h1 a {
 				background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo/site-login-logo.png);
-			height:65px;
-			width:320px;
-			background-size: 320px 65px;
-			background-repeat: no-repeat;
+				height: 65px;
+				width: 320px;
+				background-size: 320px 65px;
+				background-repeat: no-repeat;
 				padding-bottom: 30px;
 			}
 		</style>
@@ -200,8 +200,6 @@ public function Sizzler_enqueue_scripts(){
 	wp_register_style('theme-style', sys_template_uri. '/style.css');
 	wp_enqueue_style('theme-style');
 
-
-
 	// enqueue js
 	wp_register_script( 'modernizr', sys_template_uri. '/assets/js/vendor/modernizr-3.5.0.min.js', null, null, false );
 	wp_enqueue_script('modernizr');	
@@ -211,6 +209,10 @@ public function Sizzler_enqueue_scripts(){
 	wp_enqueue_script('popper');
 	wp_register_script( 'bootstrap-min', sys_template_uri. '/assets/js/bootstrap.min.js', null, null, true );
 	wp_enqueue_script('bootstrap-min');	
+	if(is_shop()){
+		wp_register_script( 'plugin-collection', sys_template_uri. '/assets/js/jquery-plugin-collection.js', null, null, true );
+		wp_enqueue_script('plugin-collection');	
+	}
 	wp_register_script( 'slicknav-min', sys_template_uri. '/assets/js/jquery.slicknav.min.js', null, null, true );
 	wp_enqueue_script('slicknav-min');
 	wp_register_script( 'owl-arousel-min', sys_template_uri. '/assets/js/owl.carousel.min.js', null, null, true );
@@ -223,7 +225,7 @@ public function Sizzler_enqueue_scripts(){
 	wp_enqueue_script('animated');
 	wp_register_script( 'magnific-popup', sys_template_uri. '/assets/js/jquery.magnific-popup.js', null, null, true );
 	wp_enqueue_script('magnific-popup');
-  wp_register_script( 'sticky', sys_template_uri. '/assets/js/jquery.sticky.js', null, null, true );
+    wp_register_script( 'sticky', sys_template_uri. '/assets/js/jquery.sticky.js', null, null, true );
 	wp_enqueue_script('sticky'); 
 	wp_register_script( 'plugins', sys_template_uri. '/assets/js/plugins.js', null, null, true );
 	wp_enqueue_script('plugins');
@@ -231,6 +233,10 @@ public function Sizzler_enqueue_scripts(){
 	wp_enqueue_script('main');
 	wp_register_script( 'custom-js', sys_template_uri. '/assets/js/custom.js', null, null, true );
 	wp_enqueue_script('custom-js');
+	if(is_shop()){
+		wp_register_script( 'script', sys_template_uri. '/assets/js/script.js', null, null, true );
+		wp_enqueue_script('script');
+	}
 	}
 	public function Sizzler_auto_login_user($user_id){
 	$user = get_user_by( 'id', $user_id );
@@ -330,10 +336,7 @@ public function Sizzler_enqueue_scripts(){
 	'after_title' => $afterTitle,
 	));
 	}
-	public function Sizzler_multiple_widget_init(){
-	Sizzler_widget_registration('Footer widget 1', 'footer-sidebar-1', 'test', '', '', '', '');
-	Sizzler_widget_registration('Footer widget 2', 'footer-sidebar-2', 'test', '', '', '', '');
-	}
+	
 	public function footer_widget_1(){
 	register_sidebar( array(
 	'name' => __( 'Footer 1', 'demolition' ),
