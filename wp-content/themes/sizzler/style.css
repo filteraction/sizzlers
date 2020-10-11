@@ -204,3 +204,18 @@ a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.btn.btn-danger.
     margin-left: 12px;
     /* margin-top: -10px; */
 }
+.woocommerce #content table.cart img, .woocommerce table.cart img, .woocommerce-page #content table.cart img, .woocommerce-page table.cart img {
+    width: 80px;
+}
+
+.wp-pagenavi span.current {
+    background-color: #f0168a;
+    color: white;
+    border: 1px solid #f0168a;
+}
+.wp-pagenavi a {
+    color: #635c5c;
+}
+form.woocommerce-ordering {
+    float: right;
+}
