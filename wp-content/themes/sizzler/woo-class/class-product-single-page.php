@@ -10,21 +10,21 @@ class Product_Single_Page
   add_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
   remove_action('woocommerce_before_single_product_summary','woocommerce_show_product_images',20);
   //remove_action('woocommerce_single_product_summary','woocommerce_template_single_rating',10);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+  // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+  // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
   // add_action('woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
-  add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10);
-  add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 20);
-  add_action('woocommerce_before_add_to_cart_form', array($this, 'masonic_print_hr'), 10 );
-  add_action('woocommerce_before_add_to_cart_button', array($this, 'masonic_quantity_label'), 10 );
-  add_action( 'wp_head', array($this, 'masonic_woocommerce_quntity_field_css' ));
-  add_action( 'wp_footer', array($this, 'masonic_woocommerce_quntity_field_script' ));
-  add_action('woocommerce_single_product_summary', array($this, 'masonic_woocommerce_template_single_add_to_cart_wrapper_open'), 30);
+  // add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10);
+  // add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 20);
+  // add_action('woocommerce_before_add_to_cart_form', array($this, 'masonic_print_hr'), 10 );
+  // add_action('woocommerce_before_add_to_cart_button', array($this, 'masonic_quantity_label'), 10 );
+  // add_action( 'wp_head', array($this, 'masonic_woocommerce_quntity_field_css' ));
+  // add_action( 'wp_footer', array($this, 'masonic_woocommerce_quntity_field_script' ));
+  add_action('woocommerce_single_product_summary', array($this, 'masonic_woocommerce_template_single_add_to_cart_wrapper_open'), 20);
   add_action('woocommerce_single_product_summary', array($this, 'masonic_woocommerce_template_single_add_to_cart_wrapper_close'), 30);
   add_action('woocommerce_before_add_to_cart_button', array($this, 'masonic_woocommerce_before_add_to_cart_button_wrapper_open'), 30);
   add_action('woocommerce_before_add_to_cart_button', array($this, 'masonic_woocommerce_before_add_to_cart_button_wrapper_close'), 30);
   //remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-  add_action('woocommerce_after_add_to_cart_form', array($this, 'masonic_print_hr'), 10 );
+  // add_action('woocommerce_after_add_to_cart_form', array($this, 'masonic_print_hr'), 10 );
   remove_action('woocommerce_after_single_product_summary','woocommerce_output_related_products',20);
   add_action('woocommerce_after_single_product',array($this, 'masonic_woocommerce_output_related_products'),20);
   }
@@ -46,7 +46,7 @@ class Product_Single_Page
   }
   public function masonic_woocommerce_template_single_add_to_cart_wrapper_open()
   {
-  echo '<div class="form-area"> <div class="form-wrap">';
+  echo '<div class="product-option"> <div class="product-row">';
   }
   public function masonic_woocommerce_template_single_add_to_cart_wrapper_close()
   {

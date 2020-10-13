@@ -22,7 +22,16 @@
             </div>
         </div>
         <!-- breadcrumb End -->
-
+        <?php if(is_single()){?> 
+               <!-- Top Posts Start -->
+        <div class="woocommerce shop-single-section pt-40 pb-40">
+            <div class="container">
+                <div class="row justify-content-lg-between">
+                <?php woocommerce_content();?>
+                </div>
+            </div>
+        </div>
+        <?php } else{?>
         <!-- Top Posts Start -->
         <div class="top-post-area pt-40 pb-40" style="background: #eee;">
             <div class="container">
@@ -42,6 +51,7 @@
             
             </div>
         </div>
+<?php } ?>
 </main>
 
 <?php get_footer(); ?>

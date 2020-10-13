@@ -219,3 +219,16 @@ a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.btn.btn-danger.
 form.woocommerce-ordering {
     float: right;
 }
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 160px;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    padding: 18px;
+};
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+    padding: 18px;
+}
+.woocommerce .quantity .qty {
+    width: 6.631em;
+
+}

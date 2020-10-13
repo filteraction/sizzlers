@@ -30,20 +30,51 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+$attachment_ids = $product->get_gallery_image_ids();
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<!-- <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>> -->
 
-	<?php
+<div class="col-xs-12 col-md-5">
+<div class="shop-single-slider">
+
+<?php 
+	echo '<div class="slider-for">';
+		if ($attachment_ids){
+			
+			foreach( $attachment_ids as $attachment_id ) {
+				$image_link = wp_get_attachment_url( $attachment_id );
+				echo '<div><img src="'.$image_link.'" /></div>';
+			}
+
+		}else{
+			echo '<div><img src="'.wp_get_attachment_url( $product->get_image_id() ).'" /></div>'; 
+		}
+	echo '</div>';
+
+
+	echo '<div class="slider-nav">';
+	if ($attachment_ids){
+		foreach( $attachment_ids as $attachment_id ) {
+			$image_link = wp_get_attachment_url( $attachment_id );
+			echo '<div><img src="'.$image_link.'" /></div>';
+		}
+	}
+	echo '</div>';
+
 	/**
 	 * Hook: woocommerce_before_single_product_summary.
 	 *
 	 * @hooked woocommerce_show_product_sale_flash - 10
 	 * @hooked woocommerce_show_product_images - 20
 	 */
-	do_action( 'woocommerce_before_single_product_summary' );
+	//do_action( 'woocommerce_before_single_product_summary' );
+	
 	?>
-
-	<div class="summary entry-summary">
+</div>
+</div>
+<div class="col-xs-12 col-md-7">
+    <div class="product-details">
+	<!-- <div class="summary entry-summary"> -->
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -59,8 +90,9 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
-	</div>
-
+	<!-- </div> -->
+	</div> <!-- end product details -->
+</div>
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
@@ -71,6 +103,6 @@ if ( post_password_required() ) {
 	 */
 	do_action( 'woocommerce_after_single_product_summary' );
 	?>
-</div>
+<!-- </div> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

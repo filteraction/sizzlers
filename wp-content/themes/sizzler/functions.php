@@ -41,7 +41,7 @@ if(isset($_POST['sizzler_create_user'])){
 $custom_commerce = new Custom_Commerce(); // Base class for custom woo
 //woo customized by gdb
 $shop_page = new Product_Page(); // Child class to customize product page
-//$shop_details = new Product_Single_Page(); // Child class to customize product single page
+$shop_details = new Product_Single_Page(); // Child class to customize product single page
 // $mr_cart = new Masonic_Cart(); // Child class to customize minicart page
 //$mr_checkout = new Masonic_Checkout(); // Child class to customize checkout page
 //$mr_myaccount = new My_Account(); // Base class to customize woo myaccount page

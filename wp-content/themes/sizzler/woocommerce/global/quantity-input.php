@@ -23,7 +23,13 @@ if ( $max_value && $min_value === $max_value ) {
 		<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" />
 	</div>
 	<?php
-} else {
+} else if(is_single()){ //added by gopal?> 
+
+<div>
+	<input id="<?php echo esc_attr( $input_id ); ?>" type="text" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>"">
+</div>
+	
+<?php }else {
 	/* translators: %s: Quantity. */
 	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'woocommerce' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'woocommerce' );
 	?>

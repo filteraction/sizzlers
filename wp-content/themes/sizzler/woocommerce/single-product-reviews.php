@@ -24,7 +24,10 @@ if ( ! comments_open() ) {
 }
 
 ?>
+
 <div id="reviews" class="woocommerce-Reviews">
+<div class="row">
+	<div class="col-md-6">
 	<div id="comments">
 		<h2 class="woocommerce-Reviews-title">
 			<?php
@@ -64,15 +67,19 @@ if ( ! comments_open() ) {
 			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
 		<?php endif; ?>
 	</div>
+	</div>
+
+<div class="col-md-6">
+
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
-		<div id="review_form_wrapper">
+		<div id="woocommere review_form_wrapper">
 			<div id="review_form">
 				<?php
 				$commenter    = wp_get_current_commenter();
 				$comment_form = array(
 					/* translators: %s is product title */
-					'title_reply'         => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
+					'title_reply'         => have_comments() ? esc_html__( 'Here you can review the item', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
 					/* translators: %s is product title */
 					'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
 					'title_reply_before'  => '<span id="reply-title" class="comment-reply-title">',
@@ -131,7 +138,7 @@ if ( ! comments_open() ) {
 					</select></div>';
 				}
 
-				$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
+				$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="5" required></textarea></p>';
 
 				comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
@@ -142,4 +149,6 @@ if ( ! comments_open() ) {
 	<?php endif; ?>
 
 	<div class="clear"></div>
+</div>
+</div>
 </div>
