@@ -1,0 +1,30 @@
+2020-10-22T10:16:07+00:00 CRITICAL syntax error, unexpected '"', expecting ')' in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php on line 61
+
+2020-10-22T10:16:08+00:00 CRITICAL syntax error, unexpected '"', expecting ')' in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php on line 61
+
+2020-10-22T10:26:10+00:00 CRITICAL syntax error, unexpected ')', expecting variable (T_VARIABLE) or '{' or '$' in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php on line 74
+
+2020-10-22T10:41:14+00:00 CRITICAL Uncaught Error: Object of class WP_Term could not be converted to string in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php:75
+Stack trace:
+#0 D:\www\htdocs\wp\sizzlers\wp-includes\class-wp-hook.php(289): Sizzler->get_custom_single_template('D:\\www\\htdocs\\w...')
+#1 D:\www\htdocs\wp\sizzlers\wp-includes\plugin.php(206): WP_Hook->apply_filters('D:\\www\\htdocs\\w...', Array)
+#2 D:\www\htdocs\wp\sizzlers\wp-includes\template.php(63): apply_filters('single_template', 'D:\\www\\htdocs\\w...', 'single', Array)
+#3 D:\www\htdocs\wp\sizzlers\wp-includes\template.php(527): get_query_template('single', Array)
+#4 D:\www\htdocs\wp\sizzlers\wp-includes\template-loader.php(81): get_single_template()
+#5 D:\www\htdocs\wp\sizzlers\wp-blog-header.php(19): require_once('D:\\www\\htdocs\\w...')
+#6 D:\www\htdocs\wp\sizzlers\index.php(17): require('D:\\www\\htdocs\\w...')
+#7 {main}
+  thrown in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php on line 75
+
+2020-10-22T10:41:18+00:00 CRITICAL Uncaught Error: Object of class WP_Term could not be converted to string in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php:75
+Stack trace:
+#0 D:\www\htdocs\wp\sizzlers\wp-includes\class-wp-hook.php(289): Sizzler->get_custom_single_template('D:\\www\\htdocs\\w...')
+#1 D:\www\htdocs\wp\sizzlers\wp-includes\plugin.php(206): WP_Hook->apply_filters('D:\\www\\htdocs\\w...', Array)
+#2 D:\www\htdocs\wp\sizzlers\wp-includes\template.php(63): apply_filters('single_template', 'D:\\www\\htdocs\\w...', 'single', Array)
+#3 D:\www\htdocs\wp\sizzlers\wp-includes\template.php(527): get_query_template('single', Array)
+#4 D:\www\htdocs\wp\sizzlers\wp-includes\template-loader.php(81): get_single_template()
+#5 D:\www\htdocs\wp\sizzlers\wp-blog-header.php(19): require_once('D:\\www\\htdocs\\w...')
+#6 D:\www\htdocs\wp\sizzlers\index.php(17): require('D:\\www\\htdocs\\w...')
+#7 {main}
+  thrown in D:\www\htdocs\wp\sizzlers\wp-content\themes\sizzler\theme-class\class-sizzler.php on line 75
+

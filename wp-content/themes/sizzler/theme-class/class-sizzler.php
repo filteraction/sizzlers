@@ -57,8 +57,51 @@ class Sizzler{
 
 	  //add_filter( 'login_redirect', array($this, 'wpdocs_my_login_redirect', 10, 3 ));
 
-	} //end __construct()
+	add_filter( 'category_template', array($this, 'wpd_subcategory_template' )); //Different template for subcategories
+	add_filter( 'single_template', array($this, 'get_custom_single_template') ) ;
 
+	} //end __construct()
+	public function get_custom_single_template(){
+		global $post;
+		$single_template = '';
+		$fashion_terms = array( 'fashion', 'streetstyle', 'accesories',  'runway',  'designer' );
+		if ($post->post_type == 'post') {
+			$terms = get_the_terms($post->ID, 'category');
+			// echo '<pre>';
+			// print_r($terms);
+			if($terms && !is_wp_error( $terms )) {
+				//Make a foreach because $terms is an array but it supposed to be only one term
+				foreach($terms as $term){
+					
+					if(in_array($term->slug, $fashion_terms)){
+						// var_dump($term);
+						$single_template = locate_template( 'single-fashion.php' );
+					}
+					else{
+						$single_template = locate_template( 'single.php' );
+					}
+					
+				}
+			}
+		 }
+		 return $single_template;
+
+	}
+
+	public function wpd_subcategory_template( $template ) {
+		$cat = get_queried_object();
+	
+		if ( cat_is_ancestor_of( 5, $cat ) ) { // 5 is ID of the parent category 'fashion'
+			// get_template_part('includes/recipe', 'child');
+			$template = locate_template( 'category-fashion.php' );
+		} elseif ( is_category('fashion') ) {
+			$template = locate_template( 'category-fashion.php' );
+			// get_template_part('includes/recipe', 'parent');
+		}
+	
+		return $template;
+	}
+	
 	public function theme_login_logo() 
 	{ ?>
 		<style type="text/css">

@@ -276,8 +276,10 @@ background: linear-gradient(#655b5b0d, #11111336), url(https://fashionsizzle.com
                                     array(
                                         'taxonomy' => 'category',
                                         'field' => 'slug',
-                                        'terms' => 'fashion'
+                                        'terms' => 'fashion',
+                                        'include_children' => false
                                     )
+                                 
                             )
                         );
                         $the_query = new WP_Query( $args );
