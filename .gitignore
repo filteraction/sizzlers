@@ -10,7 +10,7 @@ wp-content/*
 db
 
 
-!wp-config.php
+wp-config.php
 # ignore log files and databases
 *.log
 *.sql
