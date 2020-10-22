@@ -9,6 +9,8 @@ wp-content/*
 # ignore db directory
 db
 
+
+!wp-config.php
 # ignore log files and databases
 *.log
 *.sql
